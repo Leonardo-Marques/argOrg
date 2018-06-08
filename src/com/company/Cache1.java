@@ -27,8 +27,15 @@ public class Cache1 {
         aux.add(pal);
         if (cache.get(linha) != null){
             if (cache.get(linha).contains(tag))hit++;
-            else miss++;
-        }
-        cache.put(linha, aux);
+            else{
+                miss++;
+                cache.put(linha, aux);
+            }
+        }else cache.put(linha, aux);
+    }
+
+    @Override
+    public String toString() {
+        return cache.toString();
     }
 }
